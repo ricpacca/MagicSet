@@ -124,8 +124,8 @@ public class MagicHashSet<E extends UniqueItem> extends AbstractSet<E> implement
         map = new HashMap<>();
 
         map = (this) instanceof LinkedMagicHashSet ?
-                new LinkedHashMap<>() :
-                new HashMap<>();
+                new LinkedHashMap<>(size) :
+                new HashMap<>(size);
 
         // Read in all elements in the proper order.
         for (int i=0; i<size; i++) {
